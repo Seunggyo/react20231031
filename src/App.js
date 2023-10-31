@@ -1,11 +1,17 @@
 function App() {
   // component : html을 감싸고 있는 함수
+  // jsx에서 태그 사용시 꼭 태그 종료를 해야함
+  // 빈 요소이면 시작 태그에서 종료
   return (
-      <div>
-        <h1>hello react</h1>
-        <h2>HI REACT</h2>
-        <MyComp/>
-      </div>
+    <div>
+      <h1>hello react</h1>
+      <h2>HI REACT</h2>
+      <p>
+        Lorem ipsum dolor. <br />
+        Lorem ipsum dolor.
+      </p>
+      <MyComp />
+    </div>
   );
 }
 
@@ -24,10 +30,10 @@ function MyComp() {
   // jsx 에서 주석 사용 법
   // {/*  */}
   return (
-      <div>
-        <h1>HI COMPONENT</h1>
-        <h2>hello</h2>
-      </div>
+    <div>
+      <h1>HI COMPONENT</h1>
+      <h2>hello</h2>
+    </div>
   );
 }
 

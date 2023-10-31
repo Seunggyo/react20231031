@@ -1,3 +1,22 @@
+function MyComp2() {
+  let name = "손흥민";
+  let age = 33;
+
+  // jsx 에서 js 코드 작성 하기 위한 기호 {}
+  return (
+    <>
+      <h1>hello react</h1>
+      <h1>hello {name}</h1>
+      <h1>age : {age}</h1>
+      <h1>{age * 2} double years</h1>
+      <h1>{name + "선수"}</h1>
+      {/*
+      중괄호는 자바스크립트 코드이기 때문에 코드 블럭이 이런식으로 생겼다
+      */}
+    </>
+  );
+}
+
 function App() {
   // component : html을 감싸고 있는 함수
   // jsx에서 태그 사용시 꼭 태그 종료를 해야함
@@ -11,6 +30,7 @@ function App() {
         Lorem ipsum dolor.
       </p>
       <MyComp />
+      <MyComp2 />
     </div>
   );
 }

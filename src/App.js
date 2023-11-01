@@ -1,12 +1,21 @@
-import {MyElem} from "./component/MyElem";
-import {MyComp} from "./component/MyComp"; // export된 컴포넌트(변수, 함수, 객체)를  import 다다
+import {
+  address,
+  MyBox,
+  MyContainer,
+  MyElem,
+  name,
+  person,
+} from "./component/MyBox";
 
-// export된 컴포넌트(변수, 함수, 객체)를  import 다다
 function App() {
+  console.log("name", name);
+  console.log("address", address);
+  console.log("person", person);
   return (
     <>
-      <MyComp />
+      <MyBox />
       <MyElem />
+      <MyContainer />
     </>
   );
 }

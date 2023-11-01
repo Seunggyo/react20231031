@@ -1,25 +1,16 @@
-import {
-  address,
-  MyBox,
-  MyContainer,
-  MyElem,
-  name,
-  person,
-} from "./component/MyBox";
+import age, { city } from "./component/MyElem";
+import MyBox, { country, person } from "./component/MyBox";
 
 function App() {
-  console.log("name", name);
-  console.log("address", address);
-  console.log("person", person);
   return (
     <>
+      <h1>{city}</h1>
+      <h1>{age}</h1>
       <MyBox />
-      <MyElem />
-      <MyContainer />
+      <h1>{person.name}</h1>
+      <h1>{country}</h1>
     </>
   );
 }
-
-// {value: "흥민", address: "신촌"
 
 export default App;

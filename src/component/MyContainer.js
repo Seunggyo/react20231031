@@ -6,7 +6,7 @@ export function MyContainer() {
       <h1 className={`${css.boxClass} ${css.error} ${css.note}`}>
         Lorem ipsum dolor sit amet.
       </h1>
-      <h1 className={[css.boxClass, css.error, css.note].join()}>
+      <h1 className={[css.boxClass, css.error, css.note].join(" ")}>
         Lorem ipsum dolor sit amet.
       </h1>
     </div>

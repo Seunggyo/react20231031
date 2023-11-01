@@ -1,14 +1,15 @@
-import age, { city } from "./component/MyElem";
-import MyBox, { country, person } from "./component/MyBox";
+import MyBox, {address as yourAddress,} from "./component/MyBox";
+import MyElem, {address as myAddress} from "./component/MyElem";
 
+// as 로 named export 값을 import 할 때 별칭을 줄 수 있음
 function App() {
   return (
     <>
-      <h1>{city}</h1>
-      <h1>{age}</h1>
       <MyBox />
-      <h1>{person.name}</h1>
-      <h1>{country}</h1>
+      <MyElem />
+      <h1>{yourAddress}</h1>
+      <h1>{myAddress}</h1>
+      <h1></h1>
     </>
   );
 }

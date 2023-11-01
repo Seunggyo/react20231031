@@ -1,6 +1,6 @@
 export default function Box(style) {
   return (
-    <div style={style}>
+    <div style={style.style}>
       <h1>hi box</h1>
     </div>
   );

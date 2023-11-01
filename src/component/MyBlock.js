@@ -1,6 +1,6 @@
-import style from "../style/mystyle.module.css";
+import style from "../style/yourStyle.module.css";
 
-export function MyText() {
+export function MyBlock() {
   return (
     <div>
       <h1 className={style.error}>Lorem ipsum dolor sit amet.</h1>

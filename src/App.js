@@ -4,7 +4,6 @@ function App() {
   return (
     <>
       <SimpleGrid gap={3} columns={{ base: 1, md: 3, xl: 6 }}>
-
         <Card>
           <CardBody>
             Aspernatur consectetur hic id nobis? A cum cumque doloribus libero

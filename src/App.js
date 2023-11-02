@@ -3,7 +3,7 @@ import { Box, SimpleGrid } from "@chakra-ui/react";
 function App() {
   return (
     <>
-      <SimpleGrid gap={5} columns={2}>
+      <SimpleGrid spacing={"10px"} columns={{ base: 2, md: 3, "2xl": 6 }}>
         <Box bg="blue.300">Lorem.</Box>
         <Box bg="blue.300">Porro?</Box>
         <Box bg="blue.300">Illum.</Box>

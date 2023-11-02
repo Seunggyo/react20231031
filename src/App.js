@@ -1,12 +1,12 @@
-import { Box, FormControl, FormLabel, Textarea } from "@chakra-ui/react";
+import { Box, FormControl, FormLabel, Switch } from "@chakra-ui/react";
 
 function App() {
   return (
     <>
-      <Box w={"480px"}>
-        <FormControl>
-          <FormLabel>본문</FormLabel>
-          <Textarea placeholder="본문을 입력하세요" h={"500px"} />
+      <Box>
+        <FormControl display={"flex"} alignItems={"center"}>
+          <FormLabel mb={0}>알림을 받으시겠습니까?</FormLabel>
+          <Switch size={"lg"} colorScheme="twitter" />
         </FormControl>
       </Box>
     </>

@@ -1,17 +1,13 @@
-import { Box, Button, Select } from "@chakra-ui/react";
+import { Box, FormControl, FormLabel, Textarea } from "@chakra-ui/react";
 
 function App() {
   return (
     <>
       <Box w={"480px"}>
-        <Select placeholder="옵션을 선택하세요">
-          <option value="value-1">Lorem.</option>
-          <option value="value-2">Modi.</option>
-          <option value="value-3">Earum.</option>
-          <option value="value-4">Praesentium!</option>
-          <option value="value-5">Animi!</option>
-        </Select>
-        <Button colorScheme="telegram">선택</Button>
+        <FormControl>
+          <FormLabel>본문</FormLabel>
+          <Textarea placeholder="본문을 입력하세요" h={"500px"} />
+        </FormControl>
       </Box>
     </>
   );

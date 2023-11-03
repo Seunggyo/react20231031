@@ -1,26 +1,21 @@
-import { Button } from "@chakra-ui/react";
+import { Button, Input } from "@chakra-ui/react";
 
 function App(props) {
-  // 함수명 작성 관습
-  // handle event
-  function handleClickButton1() {
-    console.log("1버튼 클릭됨");
-  }
+  // 브라우저는 event handler method에
+  // event 객체를 매개값으로 넣어줌
+  let text = "initial text";
 
-  function handleClickButton2() {
-    console.log("2번 버튼 클릭됨");
-  }
-
-  function handleButtonClick(number) {
-    console.log(number + "번째 버튼 클릭");
+  // 변수값이 변경되어도 바로 dom에는 반영되지 않음
+  function handleChange(e) {
+    console.log(e.target.value);
+    text = e.target.value;
   }
 
   return (
     <>
-      <Button onClick={handleClickButton1}>첫번째 버튼</Button>
-      <Button onClick={handleClickButton2}>두번째 버튼</Button>
-      <Button onClick={() => handleButtonClick(3)}>세번째 버튼</Button>
-      <Button onClick={() => handleButtonClick(4)}>네번째 버튼</Button>
+      <p>{text}</p>
+      <Input onChange={handleChange} />
+      <Button onClick={handleChange}>Button2</Button>
     </>
   );
 }

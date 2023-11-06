@@ -1,21 +1,24 @@
+import { Box, Button, Text } from "@chakra-ui/react";
 import { useState } from "react";
-import { Button } from "@chakra-ui/react";
 
 function App() {
-  const [text, setText] = useState("hello");
+  const [number, setNumber] = useState(0);
+  console.log(number);
 
-  console.log(text);
-
-  function handleButtonClick(e) {
-    setText("greeting");
-  }
+  const index = number % 3;
 
   return (
     <>
-      <div>
-        <Button onClick={handleButtonClick}>상태변경</Button>
-        <p>{text}</p>
-      </div>
+      <Button onClick={() => setNumber(number + 1)}>다음</Button>
+      <Box borderWidth={"3px"} borderColor={index == 0 ? "blue" : "black"}>
+        <Text>message1</Text>
+      </Box>
+      <Box borderWidth={"3px"} borderColor={index == 1 ? "blue" : "black"}>
+        <Text>message2</Text>
+      </Box>
+      <Box borderWidth={"3px"} borderColor={index == 2 ? "blue" : "black"}>
+        <Text>message3</Text>
+      </Box>
     </>
   );
 }

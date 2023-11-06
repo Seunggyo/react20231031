@@ -13,7 +13,7 @@ function App() {
   }
 
   function handleRemoveButtonClick(index) {
-    setItems(items.filter((item, i) => i != index));
+    setItems(items.filter((item, i) => i !== index));
   }
 
   return (

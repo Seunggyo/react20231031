@@ -22,7 +22,7 @@ function App() {
   function handleChangeCountry(e) {
     updatePerson((draft) => {
       draft.address.country = e.target.value;
-    });
+    }); 
   }
 
   return (

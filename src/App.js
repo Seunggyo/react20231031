@@ -16,9 +16,14 @@ function App() {
       </Box>
       <Box>
         <Button
+          // onClick={() => {
+          //   numberObject.number = numberObject.number + 1;
+          //   setNumberObject(numberObject);
+          //}}
           onClick={() => {
-            numberObject.number = numberObject.number + 1;
-            setNumberObject(numberObject);
+            const newNumberObject = { ...numberObject };
+            newNumberObject.number = newNumberObject.number + 1;
+            setNumberObject(newNumberObject);
           }}
         >
           number 객체 변경

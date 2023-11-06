@@ -1,34 +1,26 @@
 import { useState } from "react";
-import { Box, Button, Text } from "@chakra-ui/react";
+import { Box, Input, Text } from "@chakra-ui/react";
 
 function App() {
-  // set ... 메소드 상태 변경 할 수 있음
-  // 상태가 같은지 아닌지 판단 해서 re-render 결정
+  const [message, setMessage] = useState("");
+  const [obj, setObj] = useState({ message: "" });
 
-  const [number, setNumber] = useState(0);
+  function handleObjectMessageChange(e) {
+    // const newObj = { ...obj };
+    // newObj.message = e.target.value;
+    // setObj(newObj);
+    setObj({ ...obj, message: e.target.value });
+  }
 
-  const [numberObject, setNumberObject] = useState({ number: 0 });
   return (
     <>
       <Box>
-        <Button onClick={() => setNumber(number + 1)}>number 변경</Button>
-        <Text>{number}</Text>
+        <Input value={message} onChange={(e) => setMessage(e.target.value)} />
+        <Text>{message}</Text>
       </Box>
       <Box>
-        <Button
-          // onClick={() => {
-          //   numberObject.number = numberObject.number + 1;
-          //   setNumberObject(numberObject);
-          //}}
-          onClick={() => {
-            const newNumberObject = { ...numberObject };
-            newNumberObject.number = newNumberObject.number + 1;
-            setNumberObject(newNumberObject);
-          }}
-        >
-          number 객체 변경
-        </Button>
-        <Text>{numberObject.number}</Text>
+        <Input value={obj.message} onChange={handleObjectMessageChange} />
+        <Text>{obj.message}</Text>
       </Box>
     </>
   );

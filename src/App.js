@@ -23,9 +23,7 @@ function App() {
   return (
     <>
       {/* 2. context에 value 넣기 : <Context.Provider value={state}*/}
-      <MessageContext.Provider
-        value={{ message: message, setMessage: setMessage }}
-      >
+      <MessageContext.Provider value={{ message, setMessage }}>
         <AComp />
         <BComp />
       </MessageContext.Provider>

@@ -1,30 +1,35 @@
 import {
   createBrowserRouter,
   createRoutesFromElements,
-  Link,
   Outlet,
   Route,
   RouterProvider,
+  useNavigate,
 } from "react-router-dom";
-import { Box, Flex } from "@chakra-ui/react";
+import { Box, Button, Flex } from "@chakra-ui/react";
 
 function HomeComponent() {
+  // 경로 이동시 useNavigate hook을 사용 해야한다.
+  const navigate = useNavigate();
   return (
     <Box>
       <Flex gap={"10px"}>
         <Box>
-          {/* react- router 사용시에는 a 태그를 사용하지 않을것 */}
-          {/* 대신 Link component 사용 */}
-          <a href="/apath">a로 가기</a>
+          {/* 경로 이동시 js코드를 사용해서는 안된다. */}
+          <Button onClick={() => (window.location.href = "/apath")}>
+            a로 가기
+          </Button>
         </Box>
         <Box>
-          <a href="/bpath">b로 가기</a>
+          <Button onClick={() => (window.location.href = "/bpath")}>
+            b로 가기
+          </Button>
         </Box>
         <Box>
-          <Link to={"/apath"}>a로 ㄱㄱ</Link>
+          <Button onClick={() => navigate("/apath")}>a로 가기</Button>
         </Box>
         <Box>
-          <Link to={"/bpath"}>b로 ㄱㄱ</Link>
+          <Button onClick={() => navigate("/bpath")}>B로 가기</Button>
         </Box>
       </Flex>
       <Outlet />

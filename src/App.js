@@ -1,16 +1,32 @@
 import {
   createBrowserRouter,
   createRoutesFromElements,
+  Link,
   Outlet,
   Route,
   RouterProvider,
 } from "react-router-dom";
-import { Box } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 
 function HomeComponent() {
   return (
     <Box>
-      공통된 요소들
+      <Flex gap={"10px"}>
+        <Box>
+          {/* react- router 사용시에는 a 태그를 사용하지 않을것 */}
+          {/* 대신 Link component 사용 */}
+          <a href="/apath">a로 가기</a>
+        </Box>
+        <Box>
+          <a href="/bpath">b로 가기</a>
+        </Box>
+        <Box>
+          <Link to={"/apath"}>a로 ㄱㄱ</Link>
+        </Box>
+        <Box>
+          <Link to={"/bpath"}>b로 ㄱㄱ</Link>
+        </Box>
+      </Flex>
       <Outlet />
     </Box>
   );

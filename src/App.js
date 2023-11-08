@@ -18,14 +18,14 @@ function App() {
       .get("/api/main1/sub5?id=" + eId)
       .then((Response) => Response.data)
       .then((data) => setEmployee(data))
-      .catch((e) => setEmployee(null))
+      .catch(() => setEmployee(null))
       .finally(() => setIsLoading(false));
   }, [eId]);
   // 직원 번호를 선택하면 직원의 이름이 출력
   // /api/main1/sub5?id=
   // spring boot의 메소드도 작성하기
 
-  let textContent = null;
+  let textContent;
 
   if (eId === 0 || eId === null) {
     textContent = null;

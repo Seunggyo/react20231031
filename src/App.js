@@ -1,23 +1,38 @@
+import { Box, Select, Text } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import { Button, Input, Text } from "@chakra-ui/react";
+import axios from "axios";
 
 function App() {
-  const [number, setNumber] = useState(0);
-  const [text, setText] = useState("");
-
-  // 첫번째 파라미터(Setup) : the function with your Effect's logic 부작용이 있는 함수
-  // 두번째 파라미터 : Setup을 실행 시키는 값의 나열(배열)
-  //                빈 배열이면 첫 렌더링 때만 실행됨
-  //                만약 두번째 파라미터를 적지 않을 경우 재 렌더링 할때마다 실행시킴
+  const [customerId, setCustomerId] = useState(0);
+  const [cName, setCName] = useState("");
   useEffect(() => {
-    console.log("effect 함수 실행됨");
-  }, [number, text]);
+    axios
+      .get("/api/main1/sub4?id=" + customerId)
+      .then((response) => response.data)
+      .then((data) => setCName(data))
+      .catch((error) => console.log(error))
+      .finally(() => console.log("끝"));
+  }, [customerId]);
   return (
     <>
-      <Button onClick={() => setNumber(number + 1)}>증가</Button>
-      <Text>{number}</Text>
-      <Input value={text} onChange={(e) => setText(e.target.value)} />
-      <Text>{text}</Text>
+      <Select
+        placeholder="고객 번호를 선택하세요"
+        onChange={(e) => setCustomerId(e.target.value)}
+      >
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+      </Select>
+      <Box>
+        <Text>고객 이름 : {cName.customerName}</Text>
+      </Box>
     </>
   );
 }
